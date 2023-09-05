@@ -68,3 +68,45 @@ echo s?
 
 s가 처음에는 오류라서 1인데 그 다음번에는 정상이라서 0
 ```
+```
+parallel vs multi-tasking
+
+변수명 
+보기좋고 이해하기 쉬운 프로그램 작성
+탭키 x, 스페이스 3번 사용(리눅스, 비주얼은 탭키가 얼마안됨)
+
+Flynn's taxonomy : 플린 분류 (플린은 Parallel의 개념을 정의함)
+명령어와 데이터 입력의 개수에 따라 분류
+
+SISD < 하나의 명령어로 여러개의 데이터를 처리
+SIMD
+MISD - 가능하지않음
+MIMD
+
+SIMD and MIMD <- 여러개의 명령어 여러개의 데이터 처리 -> Parallel Processing
+
+SIMD (Single Instruction Multi Data) : Graphic Card 그래픽 카드 GPU 한개의 명령어로 여러개의 데이터 처리
+
+MIMD (Multi Instruction Multi Data) : 여러개의 명령어로 여러개의 데이터 처리
+
+statement vs instruction
+
+statement <- 사람이 이해하기 쉬운 high level
+instruction <- 기계가 실행할 수 있는 명령어 low level
+
+본 노이만 머신
+
+하나의 컴퓨터에서 cpu가 main memory와 버스로 연결
+계산하는 기능은 CPU
+기억하는 기능은 MEMORY
+CPU와 MEMORY로 분리
+
+버스에 캐시메모리 넣음 Memory, CPU하고 연결하려
+
+양자컴퓨터는 다같이하는듯
+
+SIMD(그래픽카드 너무 오래됨) 하나의 CU 여러개의 ALU
+MIMD(여러개의 CPU가 여러개의 메모리를 공유) 2개의 종류(Shared, Distributed)
+1. Shared : 공유메모리 Multi-core, hpc, 운영체제, 컴파일러
+2. Distributed : 분산메모리 most super computer, hpc+hpa+hpb, 네트워크 프로그램, 확장하기 쉬움
+```
