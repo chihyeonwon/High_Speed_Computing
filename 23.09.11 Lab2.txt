@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+double f(double x) {
+        return x/(x*x+2)/(x*x+2)/(x*x+2);
+}
+
+main(int argc, char *argv[])
+{
+   int i;
+   double a = 0.0;
+   double b = 2.0;
+   long N = atol(argv[1]);
+   double h = (b-a)/N;
+   double sum = (f(a) + f(b))/2.0;
+
+   if(argc != 2) {
+      printf("argument error\n");
+      exit(1);
+   }
+   for(i = 1; i<N; i++) {
+        double x = a + i * h;
+        sum += f(x);
+   }
+
+   double result = h*sum;
+   printf("integral: %lf\n", result);
+
+   return 0;
+}
