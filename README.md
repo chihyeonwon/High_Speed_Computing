@@ -183,4 +183,10 @@ FLOPS * 10^-6 = 10^6 곱하면 줄어듬 -> GFLOPS
 나쁜 점: 더하기, 빼기, 나누기에 같은 부동 소수점 계산을 하는 문제점이 있다. (같지않음에도)
 
 파일이름 area.c
+
++= floating point process가 적은쪽으로 짜봐라
+시간비교도 해보고 flops 개수가 다름
+
+시간 계산은 for부터 print 앞까지 print는 시간이많이 걸리는 함수다.
+finding flops의 개수 
 ```
