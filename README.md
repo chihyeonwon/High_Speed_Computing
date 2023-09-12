@@ -127,3 +127,60 @@ Shared Memory(OS,Semaphore)
 Distributed(p0->p1) <- Shared Memory에서도 가능하다.(컴퓨터한대에서 p1->p2 가능) time-sharing 덕분이다.
 메시지 전송하는 프로그램을 한 컴퓨터에서 만들 수 있다.(시분할) 대화식에 적합
 ```
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/046858b0-5462-412c-86ac-2b8dfbdd37fd)   
+#### measure time stamp by this program (NOT TIME)
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/da305b9f-5cc0-4f65-8bbe-e52831efc08d)    
+#### 다음주 과제
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/9619a5f7-2621-42c7-af57-356a530b0546)    
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/fef2757c-18f0-408a-9849-c8e287ec556c)    
+#### 중간시험 
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/e5b7ab78-8f96-476b-aeb7-564d755ad5d7)    
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/554efbb5-dc5b-4180-a119-71f361298573)    
+```
+Computer Structure Review
+
+Computer A의 실행시간이 10 B의 실행시간이 15일때 A의 성능은 A Performance/B Performance = B execution time/ A execution time = 15/10 1.5배 좋다.
+Execution time이 적을 수록 좋다<- Performance와 반비례 관계이다.
+
+두 번째 과제에서 gettimeofday 함수를 사용해야 한다. 클럭이 실행되는 타임스탬프를 계산해주는 함수. not time
+
+how long it takes. 실행시간을 구하여라.
+same directory에서 turnin 명령어를 써라.
+combine area.c with millieseconds
+
+open the zoom and ask to professor. 다음 주는 출석 없는데 질문이 있으면 줌으로 해라.
+
+midterm에서 value의 의미를 알아야함
+Clock rate = 3 * 10^9 HZ = number of clock cycle
+CPU Time = 1/Clock rate = 0.33 ns (theoretical time)
+
+CPU : 800MHz Mult 4cycles Add 2cycles -> how many cycles -> (4+2) 6 cycles * N =200 6*200 = 1200
+1200/800*10^6 = 1.5*10^-6
+
++ : ADD ++ : INC for(i=0;i<N;i+=1)
+
+CPU cycle의 개수는 instruction의 수 x instruction 1개 당 cycle의 수로 표현할 수 있다.
+1000000 * 0.43 * 1 + 1000000 * 0.21 * 2 ~
+1000000(0.43*1+0.23*2+~)
+
+cpu time = execution time = 1/performance
+
+GHz Millions of floationg point operations per second(M : Mega)
+
+FLOPS = Floating point operations/execution time
+MFLOPS = FLOPS * 10^-6
+GFLOPS = FLOPS * 10^-9
+
+0.2MFLOPS = 0.0002GFLOPS
+
+숙제는 GFLOPS
+
+FLOPS가 몇 개인지 계산(손으로 찾아야함)
+
+FLOPS * 10^-6 = 10^6 곱하면 줄어듬 -> GFLOPS
+
+좋은 점: 서로 다른 컴퓨터를 비교하는 데 좋다.
+나쁜 점: 더하기, 빼기, 나누기에 같은 부동 소수점 계산을 하는 문제점이 있다. (같지않음에도)
+
+파일이름 area.c
+```
