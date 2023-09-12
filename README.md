@@ -110,3 +110,20 @@ MIMD(여러개의 CPU가 여러개의 메모리를 공유) 2개의 종류(Shared
 1. Shared : 공유메모리 Multi-core, hpc, 운영체제, 컴파일러
 2. Distributed : 분산메모리 most super computer, hpc+hpa+hpb, 네트워크 프로그램, 확장하기 쉬움
 ```
+## 23.09.12 
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/75a9f7c9-fc62-4ab4-bab6-73d2b93e4af0)
+```
+Shared Memory : memomory-cpu 100cpus (하나의 OS만 존재해서 데이터 충돌(data confliction)이 일어나는 문제가 발생한다.) extend difficult
+Semaphore 세마포 : 공유메모리의 데이터 충돌 문제를 해결할 수 있다.
+multi-tasking , time-sharing 시분할
+Distributed Memory : memory-cpu (많은 OS가 있을 수 있기 때문에 확장하기 좋다.) 
+지금은 hpclab만 쓰지만 parllel programming을 하기 위해서 hpa와 hpb 을 동시에 사용할 것이다.
+openmp, mpi
+
+운영체체가 자동적으로 세마포의 기능을 해 줄 것이다.
+mpi는 send와 recv 두 개 가지고 함
+
+Shared Memory(OS,Semaphore)
+Distributed(p0->p1) <- Shared Memory에서도 가능하다.(컴퓨터한대에서 p1->p2 가능) time-sharing 덕분이다.
+메시지 전송하는 프로그램을 한 컴퓨터에서 만들 수 있다.(시분할) 대화식에 적합
+```
