@@ -191,6 +191,7 @@ FLOPS * 10^-6 = 10^6 곱하면 줄어듬 -> GFLOPS
 finding flops의 개수 
 ```
 ## Lecture 3
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/aff3dece-d1e0-4721-a713-77b54f16ae36)     
 ```
 Shared memory IPC 0666; 유닉스에서 data 공유 마스
 
@@ -210,4 +211,14 @@ client (key = 아무숫자나 치면됨)
 
 # <-로 시작하는건 cpp(c 전처리 pre processor) 언어다
 
+1fork -> 4 thread -> 1join
+```
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/23bb4f92-7518-4f15-9b8a-43542477fe89)
+```
+id 마다 num_thread 는 4
+tid 는 id 번호(0~3)라서 랜덤임 -> 자기편한대로 실행해서
+critical section <- zone with 세마포 임계구역 <- 이거 넣어주면 manual 세마포
+output 결과값은 보장가능 
+
+과제에는 세마포가 있어야한다.
 ```
