@@ -190,3 +190,24 @@ FLOPS * 10^-6 = 10^6 곱하면 줄어듬 -> GFLOPS
 시간 계산은 for부터 print 앞까지 print는 시간이많이 걸리는 함수다.
 finding flops의 개수 
 ```
+## Lecture 3
+```
+Shared memory IPC 0666; 유닉스에서 data 공유 마스
+
+다음 주 월요일 실습시간에 Shared memory를 교수님꺼랑 비교
+key data 를 치면 친 값이 더해져 나간다.
+세마포
+
+id 만들고 shared memory만드는 부분
+
+client (key = 아무숫자나 치면됨)
+
+다음주 수업에는 client 만들고
+서브프로그램은 28일까지
+
+#pragma omp parallel for는 for 루프를 여러 스레드로 분할하여 각 스레드가 반복문의 일부를 병렬로 실행하도록 합니다.
+ 이를 통해 성능을 향상시키고 다중 코어를 활용할 수 있습니다.
+
+# <-로 시작하는건 cpp(c 전처리 pre processor) 언어다
+
+```
