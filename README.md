@@ -222,3 +222,24 @@ output 결과값은 보장가능
 
 과제에는 세마포가 있어야한다.
 ```
+## 23.09.26
+
+#### Parallel Sorting Swap
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/9e661c2b-746f-4acb-a324-766df2984f30)    
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/749f3705-0f44-4168-babf-0d05f01f5ec0)
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/355b3d86-682c-49c0-9735-be45dc4c18ea)    
+![image](https://github.com/wonchihyeon/High_Speed_Computing/assets/58906858/6f00cf6d-9836-434a-8c95-d4c940409f4e)  
+```
+Sortingn odd,even 분리해서 병렬로 구함 swap value
+
+홀수번째에있는것 앞뒤로 Compare & Swap
+짝수번째에있는거 앞뒤로 Compare & Swap
+
+OpenMP # 전처리기 넣으면서 Block이 추가된다.
+
+#pragma omp parallel for 여기에 shared, private를 써서 넣으면 스레드 별로 구분되어져서 계산되어짐
+
+#pragma omp parllel for <- A[i] A는 shared memory이고 i를 pragma omp parallel for가 계산해줌
+
+omp_set_num_thread(NT) <- #nt (number of thread 스레드의 수)를 선언해준다.
+```
