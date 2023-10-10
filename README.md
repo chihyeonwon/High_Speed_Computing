@@ -251,4 +251,50 @@ parallel program을 컴파일할때는 cc -fopenmp area.c -o area 의 형태로 
 
 전역변수 area로 계산결과를 취합할 때 한 개의 스레드만 진입할 수 있도록 pragma omp atomic을 사용한다.
 대신에 reduction 보조 지시어를 사용하여 reduction (+:area) 이렇게 (operater:전역변수) 이렇게 사용도 가능하다.
+
+Splitting #pragma omp for로 나눈다.
+
+동기화 -> 시간버는용도
+
+```
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/55ae8727-9738-47c5-b4ff-a7e6e176a2d0)    
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/9791a17e-44b6-49d0-95b2-87259b90fe3a)    
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/b40bbc4d-cf17-43b1-8298-ea5f66f64287)     
+```
+A[i-1]에서 thread1의 초깃값을 알 수 없기 때문
+thread0 에서 thread1으로 갈 때 값을 잃었다. 랜덤한 값 출력
+
+solution 해결방법 -> 이때 split해서 thread0이 모두 끝나면 B가 실행되도록
+for 구문을 분리한다. #pragma omp parallel for로
+
+synchronization
+
+A[12] = Vector Array 벡터
+sum = Scalar 스칼라
+
+sum은 전역변수이름 
+reduction(+:sum)
+
+A[0]~A[3] 까지 합한 것을 local area <- private
+sum += local area <- sum is public
+
+총 12개 쓰레드4개면 하나의 스레드가 3개씩 계산한다.
+
+thread는 순서가 랜덤임
+
+각스레드가 끝난 결과값을 모두 더함
+각스레드가 끝난 결과값으 모두 곱함
+
+각 스레드의 마지막 꺼를 다더함
+각 스레드의 마지막 꺼를 다곱함
+
+oscillation 진동 +1, -1으로 변경해가면서 더함
+
+진동하는 것을 private oscillation 을 넣어준다.
+```
+
+#### 중간고사 
+```
+온라인 시험 월요일
+다다음주 월요일 
 ```
