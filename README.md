@@ -243,3 +243,12 @@ OpenMP # 전처리기 넣으면서 Block이 추가된다.
 
 omp_set_num_thread(NT) <- #nt (number of thread 스레드의 수)를 선언해준다.
 ```
+## 23.10.10 
+(OpenMP 보조 지시어)[https://m.blog.naver.com/njuhb/140156068178]    
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/3e53605a-25be-4f33-a704-053107e3df59)
+```
+parallel program을 컴파일할때는 cc -fopenmp area.c -o area 의 형태로 컴파일한다.
+
+전역변수 area로 계산결과를 취합할 때 한 개의 스레드만 진입할 수 있도록 pragma omp atomic을 사용한다.
+대신에 reduction 보조 지시어를 사용하여 reduction (+:area) 이렇게 (operater:전역변수) 이렇게 사용도 가능하다.
+```
