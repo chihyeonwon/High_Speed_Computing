@@ -390,6 +390,8 @@ processors : cpu를 실제로 나타내는 것
 ```
 exam
 
+p2p : peer 2 peer, point 2 point 까지
+
 pid가 달라서 다른 값을 가진다
 p0 는 0 1 2 3 4 5
 p1 은 6 7 8 9 10
