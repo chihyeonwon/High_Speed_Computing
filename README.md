@@ -298,3 +298,33 @@ oscillation 진동 +1, -1으로 변경해가면서 더함
 온라인 시험 월요일
 다다음주 월요일 
 ```
+
+```
+reduction이 critical/atomic 보다 빠른 이유? 두번씩 나눠서 계산
+```
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/a918c58c-06d0-406d-b31d-0878009378a1)     
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/f75ad9ee-620f-43c2-9e2a-8e97a90f1ab7)     
+```
+MPI (Message Passing Interface)
+
+공유메모리-> openMP 사용 가능
+
+portable library 이식성이 있는 라이브러리
+
+MPI 프로그램<- Window, IOS, LINUX 어디에서나 가능
+
+-L location 경로
+-lmpich libmpich.a
+-lm
+-I : include 파일 경로
+
+lib 경로에 -lmpich 이름으로 저장된다.
+libmpich.a이름으로 저장된다.
+
+mpicc ~.c
+mpiexec -n 10 a.out
+
+mpich ch<- 카멜레온 약자 chameleon
+
+
+```
