@@ -1,4 +1,4 @@
-# High_Speed_Computing
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/667930b8-20c5-4e65-9d50-f5f93931942c)# High_Speed_Computing
 컴퓨터공학과 초고속컴퓨팅 정리입니다.
 
 ## Install XShell, MobaXterm
@@ -325,6 +325,91 @@ mpicc ~.c
 mpiexec -n 10 a.out
 
 mpich ch<- 카멜레온 약자 chameleon
+```
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/2ce92745-ea56-4b81-9e7e-311a4e0058ac)
 
+```
+MPI_init, MPI_Finalize 이 함수는 필 수적이다.
 
+#include "~.h" user 파일
+#include <> system 파일
+
+Convention 약속
+MPI_Aaa : function 
+MPI_AAA : MPI-defined identifier 
+
+얼마나 많은 processor가 있을 까를 결정한다.
+omp_get_num_thread()
+->
+int MPI_Comm_size(
+   MPI_Comm comm <- in
+   int *number_of_processes <- out call by value 함수에서 변수를 바꿀때 포인터쓴다. 
+}
+
+omp_get_thread_num()
+->
+int MPI_Comm_rank(
+   MPI_Comm comm
+   int *rank
+}
+
+int MPI_Send, int MPI_Recv
+
+다똑같은데
+send 파라미터 6개(dest출발) ,recv 파라미터 7개(source)(status 추가)
+
+6개를 지역변수로 선언(np, pid, dest, tag, message, status)
+
+mpiexec -n 10 hello
+&np <- 10
+&pid <- 0~9
+
+MPI_Get_Processor_name(processor_name, &name_len)
+printf("%s, rank %d\n", processor_name, pid);
+
+pid == 0 <- send
+sprintf("message,)
+for(dest =1; dest <np; dest++) {
+  MPI_Send(message, strlen(message)+1 <- message +1 <- '\0'
+MPI_COMM_WORLD <- everything, ignore
+
+보내는 입장에서는 9번 보내는데 받는쪽에서는 한번만 받는다.
+else MPI_Recv(message, 100, MPI_CHAR, 0, tag, MPI_COMM_WORLD, &Status)
+MPI_Finalize();
+
+받을때 0한테 다 받는다.
+
+MPI_COMM_WORLD <- 무시 ignore 전체를 나타내는 숫자다
+
+hpclab은 6개밖에 없는데 
+processes: 운영체제서 오는 거 
+processors : cpu를 실제로 나타내는 것
+```
+#### 중간고사 문제 MPI_Recv를 채우시오
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/cc3bb7e7-6f7e-4a79-9bc5-9aab6a18498e)
+```
+exam
+
+pid가 달라서 다른 값을 가진다
+p0 는 0 1 2 3 4 5
+p1 은 6 7 8 9 10
+
+MPI_SEND를 채우시오
+MPI_Send(A, N/2, MPI_FLOAT, 0, tag, MPI_COMM_WORLD);
+
+MPI_Recv를 채우시오
+MPI_Recv(A+N/2, N/2, MPI_FLOAT, 1, tag, MPI_COMM_wORLD, &status)
+A+N/2 N/2만큼 더 가야한다. tag가 0이 아니라 1이 되어야 함
+
+3번일때 MPI_Recv를 채우시오
+MPI_Recv(A+N/3, N/3, MPI_FLOAT, 1, tag, ~)
+MPI_Recv(A+2*(N/3), N/3, MPI_FLOAT, 2, tag, ~)
+
+N/3을 local_N에 넣어서 사용 2프로세스가 보냄
+N/2을 local_N 1프로세스가 보냄
+
+N ->4
+mpiexec -n 4 prog
+
+N/3의 3을 Rank를 사용해
 ```
