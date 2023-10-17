@@ -414,4 +414,8 @@ N ->4
 mpiexec -n 4 prog
 
 N/3의 3을 Rank를 사용해
+
+SPMD Single Program으로 Multi Data
+
+main 프로그램 안에 데이터 Send, Receive를 넣어서 데이터 돌아다님
 ```
