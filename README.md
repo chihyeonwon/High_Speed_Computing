@@ -419,3 +419,7 @@ SPMD Single Program으로 Multi Data
 
 main 프로그램 안에 데이터 Send, Receive를 넣어서 데이터 돌아다님
 ```
+## Araa OpenMP
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/61e1ea16-9cc8-42f3-8208-0a73ce708b51)
+## Area MPI
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/07c96632-cc72-41fe-8179-8abb291a2d65)
