@@ -52,6 +52,9 @@ main(int argc, char *argv[])
    printf("elapsed time: %ld milliseconds\n", elapsed);
    printf("GFLOPS: %10.2f\n", (N*16.0/(elapsed/1000.0))/1000000000.0);
 
+   // added initialized area
+   area = 0.0;
+
    nt = atoi(argv[2]);
 
    // parallel(openMP) calculation of area
