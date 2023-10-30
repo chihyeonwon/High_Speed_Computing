@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
    
     
    x = local_a;
-   for(i=0; i<N; i++) {
+   for(i=0; i<N; nt++) {
       local_area += 0.5*(f(x)+f(x+dx))*dx;
       x += dx;
    }
