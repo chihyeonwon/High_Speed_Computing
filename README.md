@@ -440,3 +440,84 @@ mfile
 
 2개는 hpa, 3개는 hpb 프로세서로 돌림
 ```
+```
+collective communication :그룹 커뮤니케이션
+
+브로드캐스팅 : root p0가 다른 프로세스에게 같은 메시지를 보낸다.
+
+mpi_Bcast
+
+message in -> root out -> 다른 모든 프로세서
+
+send, recv 5줄을 mpi_bcast 한줄로 축약가능하다.
+
+root = 보내는 pid 번호
+
+mpi_reduce => reduce -> +,- 같은 연산작업
+
+MPI_Reduce(operand연산자, result(get value from the root), count(how many), type, operator, root, comm)
+
+operator에는 여러가지가있는데 sum, prod가 자주 쓰인다.
+
+land -> logical and
+band -> binary and 
+
+float area, local_area로 hw에는 수정하면된다.
+
+MPI_Reduce(local_data, &data
+
+local_data를 global data(data)
+
+MPI_Send(&data)가 MPI_Send(&local data)로 수정되어야 함
+
+Dot product가 과제 hw5랑 비슷하다.
+
+dot_prod 함수에서 루프 n <- local_n
+
+과제에서 두번째 부분이다. composition
+
+local_dot을 dot에 더한 후에 return 한다.
+
+root 빼고 나머지는 같은 행동을 각각 할때
+
+1. bcast 는 같은 메시지를 전달하는거 0이아니라 root 왜냐면 root는 반드시 0이아니다 임의의 프로세스가 될 수 있기 때문
+2. reduce는 같은 메시지를 받아서 축적되서 한 값으로 계산되는 것 
+
+MPI_Reduce(operand root가아닌 것, root result)
+
+maxloc, minloc 몇번째위치 sort
+
+reduce는 받아서 data에 받은 다음 축적해서 더함
+
+다음 주 월요일에 저번 hw4를 reduce를 쓰는 것으로 수정하는 과정
+
+array를 줄 때 포인터를 쓰지 않고 x[], y[]
+
+이번숙제 decomposition, 분산(e.g.2는)만 한거, composition,
+
+n은 local dot의 size
+
+최종적으로 root에 보낸다.
+
+파트너 7파트너 3
+
+eor_bits 나중에 숙제는 sum이 아니라 곱셈
+
+eor_bits >> 1 -> 처음에는 8개 그다음에는 4개 그다음엔 2개
+
+eor_bit가 반씩 줄어들면서 3번만 하면 되고
+
+eor_bits가 자기 바트너 정하고 파트너한테
+
+N = 3 일때 파트너 구하는 것
+
+N=3 i=0, eor_bits =4 8이였는데 4로 줄어듬
+파트너 0에 대한 것은 0<-4, 1<-5, 2<-6, 3<-7
+
+i=1 eor_bits=2, 0<-2, 1<-3  step2
+
+i=2, eor_bits=1 partner 0<-1  step1
+
+P2P의 복잡도를 collective를 사용해서 logN으로 줄였다.
+
+```
