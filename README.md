@@ -413,7 +413,7 @@ N/2을 local_N 1프로세스가 보냄
 N ->4
 mpiexec -n 4 prog
 
-N/3의 3을 Rank를 사용해
+N/3의 3을 MPI_size를 사용해서 대체 가능하다.
 
 SPMD Single Program으로 Multi Data
 
@@ -423,3 +423,20 @@ main 프로그램 안에 데이터 Send, Receive를 넣어서 데이터 돌아�
 ![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/61e1ea16-9cc8-42f3-8208-0a73ce708b51)
 ## Area MPI
 ![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/07c96632-cc72-41fe-8179-8abb291a2d65)
+
+## 23.10.31
+### HPC(High Performance Computing)
+```
+2개의 array를 더하는데 # decomposition
+루프를 24번하지말고 각각에서 더하고
+
+hpclab(6)
+hpalab(16)
+hpb(16) ->38개 프로세스
+
+mpiexec -n 5 -machinefile mf greetings
+
+mfile
+
+2개는 hpa, 3개는 hpb 프로세서로 돌림
+```
