@@ -440,6 +440,9 @@ mfile
 
 2개는 hpa, 3개는 hpb 프로세서로 돌림
 ```
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/287715e7-2ac3-413e-b034-a50b2e980626)     
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/968d054c-9e4c-49a2-a025-61dc048da5c7)          
+![image](https://github.com/chihyunwon/High_Speed_Computing/assets/58906858/1614a58e-5a0f-4d61-a86f-bb6802b25bf1)        
 ```
 collective communication :그룹 커뮤니케이션
 
@@ -519,5 +522,4 @@ i=1 eor_bits=2, 0<-2, 1<-3  step2
 i=2, eor_bits=1 partner 0<-1  step1
 
 P2P의 복잡도를 collective를 사용해서 logN으로 줄였다.
-
 ```
