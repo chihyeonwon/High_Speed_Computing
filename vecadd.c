@@ -46,9 +46,6 @@ int main(int argc, char* argv[]) {
         for (i = 1; i < np; i++) {
             MPI_Recv(&C[i * N/np], N/np, MPI_FLOAT, i, 0, MPI_COMM_WORLD, &status);
         }
-        for (i=0; i< N/np; i++) {
-           C[i] = C[i];
-        }
     } else {
         MPI_Send(C, N/np, MPI_FLOAT, 0, 0, MPI_COMM_WORLD);
     }
