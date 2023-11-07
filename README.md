@@ -565,3 +565,16 @@ i = 0 부터가 아니라 N 만큼
 
 프로그램은 10줄이 안되면서 쉽다.
 ```
+## Scatterv and Gatherv
+
+```
+다음주 Scatterv and Gatherv
+v is very
+```
+
+
+
+
+
+
+
