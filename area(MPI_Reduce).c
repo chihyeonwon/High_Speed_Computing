@@ -48,7 +48,10 @@ int main(int argc, char *argv[])
    area = 0.0;
    
    local_N = N/(long)size;
-       
+   
+   x = ((b-a)/(double)size)*(double)pid;
+
+   
    for(i=0; i<local_N; i++) {
       local_area += 0.5*(f(x)+f(x+dx))*dx;
       x += dx;
