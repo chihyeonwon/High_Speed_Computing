@@ -523,3 +523,45 @@ i=2, eor_bits=1 partner 0<-1  step1
 
 P2P의 복잡도를 collective를 사용해서 logN으로 줄였다.
 ```
+## 23.11.07 
+![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/df482cf7-09da-4251-887c-f7b6eba5c86e)    
+![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/815d7c6e-8eae-42dd-a6bb-013d847e8062)    
+```
+Scatter 뿌리다(decomposition). Gather 모으다(composition)
+
+배열을 분리해서 뿌리면(send)하면 분해하는 것과 같다
+p0 one task, send data, send_count
+all other task , recv_data, recv_count, root =0
+
+p0 A가 send B가 recv
+
+recv_data 빼고 다 in
+
+mpi_scatter의 앞의 3개 매개변수는 mpi_send를 위한 것, 뒤의 3개 매개변수는 mpi_recv를 위한 것
+
+gather의 포맷은 scatter와 비슷하다.(send,recv의 의미만 다를뿐)
+포맷은 send, recv 순서가 고정이니까 scatter일때 send가 A가 앞에 gather일때 send가 B가 앞에
+
+p0 A가 recv B가 send
+```
+![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/0029f24c-5321-43ff-a485-4b4e17d4082d)    
+![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/c926ba9d-16a4-41d9-b27b-3cee46cec1b2)    
+```
+11일까지인 숙제 Bcast2를 만든다.
+
+N은 parallel prefix sum 알고리즘과 같다.
+
+print N
+
+p2p send & recv
+
+i = 0 부터가 아니라 N 만큼
+
+8개가 있으면 STEP이 LOG(8) => 3
+16개가 있으면 STEP이 LOG(16) => 4
+지난주에 한 예제를 참고
+
+차이가 있다면 Reduce하는 것인데 bcast는 반대방향
+
+프로그램은 10줄이 안되면서 쉽다.
+```
