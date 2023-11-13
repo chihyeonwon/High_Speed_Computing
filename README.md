@@ -571,6 +571,8 @@ i = 0 부터가 아니라 N 만큼
 다음주 Scatterv and Gatherv
 v is very
 ```
+## hw6 과제답
+![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/e8a540d3-fe05-474e-844b-a5d1e4d6c062)
 
 
 
