@@ -573,8 +573,9 @@ v is very
 ```
 ## hw6 과제답
 ![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/e8a540d3-fe05-474e-844b-a5d1e4d6c062)
-
-
+```
+실행할 때 mpiexec -np 4 ./bcast
+```
 
 
 
