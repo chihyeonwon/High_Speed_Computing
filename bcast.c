@@ -11,19 +11,20 @@ int MPI_Bcast2(void *buffer, int count, MPI_Datatype datatype, MPI_Comm comm)
    MPI_Comm_size(MPI_COMM_WORLD, &np);
    MPI_Comm_rank(MPI_COMM_WORLD, &pid);
       
-   N = (int)(log(np)/log(2)); // for any number of processes
+   N = (int)(roundf(log(np)/log(2)+0.49999)); // for any number of processes
+   eor_bits = 1;
    
-   eor_bits = np;
    for (i = 0; i < N; i++) {
-      eor_bits = 1 << i;
       partner = pid ^ eor_bits;
-      if (pid < partner) {
+      if(partner < np) {
+        if (pid < eor_bits) {
          MPI_Send(buffer, count, datatype, partner, tag, comm);
-         break;
-      } else if (pid > partner) {
+      } else if (pid < eor_bits << 1) {
          MPI_Recv(buffer, count, datatype, partner, tag, comm, &status);
       }
-   }   
+      eor_bits = eor_bits << 1;
+     }   
+   }
 
    return 0;
 }
