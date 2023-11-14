@@ -579,8 +579,6 @@ v is very
 ## 23.11.14
 ![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/62276b94-b52f-49b0-a007-0a5b1d258ad4)      
 ![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/714eaa42-c884-43aa-9c18-f441d4c60975)     
-
-
 ```
 루프를 줄이는 게 좋다.
 
@@ -655,6 +653,8 @@ dipls를 사용한 index type을 사용하여 해결한다.
 
 첫 번재 행 block_lengths[i] = N-i; // 5 4 3 2 1
 row면 block_lengths[i] =i+1
+
+hw7은 scatterv랑 gatherv를 사용해서 만든다.
 ```
 
 
