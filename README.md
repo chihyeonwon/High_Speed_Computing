@@ -576,7 +576,66 @@ v is very
 ```
 실행할 때 mpiexec -np 4 ./bcast
 ```
+## 23.11.14
+```
+루프를 줄이는 게 좋다.
 
+Scatterv, Gaterv는 메시지의 크기가 다양할 때 쓴다.
+
+displacements : 4개로 나누는데 not same size
+gap  0부터 떨어진 것 displacements
+displs[0] = 1 0에서 1만큼 떨어진 곳 1
+
+p1이 가지는 값은 무엇인가 20 30 40 <- 기말고사 시험
+
+hw7에 사용됨
+
+gather는 리버스다.
+
+gather하면서 p0가 덮어써진다.
+
+Homework 7
+
+여러개의 프로세스가 같은 일을 하도록
+
+colletive도 되고 p2p도 되는데 보내고자 하는 데이터형을 만들어서 보낸다.
+
+타입이름을 쓸 수 없다. MPI_INT, MPI_FLOAT, MPI_CHAR MPI가 만들어놨는데
+INDATA_T는 MPI_INDATA라고 쓸 수 없다. 유저가 만든 것은 정의할 수 없다.
+
+array랑 structor는 메모리 상에 연속된 데이터라 포인터를 사용하기 쉽다.
+
+그래서 type을 만들건데 MPI_Type_struct로 만든다.
+
+MPI_Aint displacements <- 포인터 각 변수가 위치한 주소를 가르킨다.
+
+MPI_Type_commit은 MPI_Type_struct의 마지막 변수로 만든 것을 넣어서 호출하는 용도임
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. structure type
+Array type가 비슷하지만 서로 다른 데이터 타입과 위치를 가진다.
+
+
+2. vector type
+
+3. index type
+
+
+
+
+```
 
 
 
