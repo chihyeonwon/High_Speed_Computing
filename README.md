@@ -677,6 +677,17 @@ coordinator : x, y를 결정한다. 좌표
 
 2, 20
 
+SendRecv를 같이함
+
+SendRecv_replace 하나의 버퍼사용
+
+Synchronization -> 임의로 기다리게하는 함수 Barrier
+
+Timing : 실행 시간을 반환 Wtime Wall Clock Time 벽시계
+CPU TIME은 CPU에 영향받음
+WALL Clock Time <- 운영체제 등등 영향을 받음
+
+
 
 
 
