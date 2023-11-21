@@ -656,6 +656,9 @@ row면 block_lengths[i] =i+1
 
 hw7은 scatterv랑 gatherv를 사용해서 만든다.
 ```
+![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/2cfe8f6e-0e6c-443b-8e7c-303a61892076)
+## HW8
+![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/0b3d7538-a3da-4ba9-a2d4-2de7bb297c68)
 
 
 
