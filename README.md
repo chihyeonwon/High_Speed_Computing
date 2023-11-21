@@ -659,6 +659,41 @@ hw7은 scatterv랑 gatherv를 사용해서 만든다.
 ![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/2cfe8f6e-0e6c-443b-8e7c-303a61892076)
 ## HW8
 ![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/0b3d7538-a3da-4ba9-a2d4-2de7bb297c68)
+```
+MPI_Comm_group(), MPI_Group_incl(), MPI_Comm_crate()
 
+파란 것의 결과 : 
+빨간 것의 결과 :
+
+split 쪼개다. 나누다. 
+split_key 
+
+grid topology -> 2차원 좌표계
+cartesian -> x, y
+
+MPI_Cart_create
+
+coordinator : x, y를 결정한다. 좌표
+
+2, 20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
 
 
