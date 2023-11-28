@@ -686,6 +686,75 @@ Synchronization -> 임의로 기다리게하는 함수 Barrier
 Timing : 실행 시간을 반환 Wtime Wall Clock Time 벽시계
 CPU TIME은 CPU에 영향받음
 WALL Clock Time <- 운영체제 등등 영향을 받음
+```
+## 23.11.28 GPU Programming
+```
+hpclab -> hpa 
+hpclab -> hpb
+
+cuda program -> hpa, hpb
+
+nvcc -o prog prog.cu <- cudaSetDevice(0); cs17 -> 홀수면 1로가지고 짝수로 가면 0으로 가짐
+cudaSetDevice(1); <-로 줘야함
+
+kernal 핵심
+
+__global__ <- 커널네임
+threadIdx.x; 
+vecAdd<<<dimGrid,dimBlock>>>(A,B,C);
+
+루프가 없는데 반복을 하는 점이 중요하다. 자동으로 병렬이 되기 때문에
+for루프를 돌때 i를 threadIdx.x 로 준다.
+
+thread hierarch gpu 12개를 할당한다. 그때그때
+
+전체 계산하는게 grid <- dim3(타입) dimGrid(N);
+call 하는 방법 <<<
+
+도메인 사이즈랑 dimGrid
+도메인 블록사이즈를 넣어줘야함 dimBlock
+
+dimGrid, dimBlock 을 호출
+왼쪽에있는게 그리드(내가 계산하고자하는 배열의 크기)
+오른쪽에 있는게 GPU 하드웨어의 개수
+
+호출하면 dimblock을 주면 gridDim.x(y,z) : 그리드의 크기
+blockIdx.x(y,z) 블록의 인덱스
+blockDim.x(y,z) 블록의 크기
+threadIdx.x 각각의 인덱스
+
+Dim은 크기 idx는 인덱스
+
+블록의 크기는 3,4 그리드의 크기는 4,2
+
+gpu는 12개 gpu크기는 블록으로 준다.
+전체 그리드의 크기(4,2) 는 12 * 8 = 96개
+
+그리드(작은것을 모은 큰것)
+gridDim.x = 4
+gridDim.y = 2
+blockIdx
+
+블록 (작은거)
+blockDim.x = 3
+blcokDim.y = 4
+threadIdx
+
+gpu는 4개
+
+thread block -> 4
+
+12/4 = 3
+
+domain,array 0 1 2 3 4 5 6 7 8 9 10 11
+
+hardware Gpu의 코어 0 1 2 3 계산하고 4 5 6 7 계산하고 8 9 10 11 계산하고 
+4개씩 동시에 계산하는데 4개씩 3번 계산한다. 동시에 계산하는 것처럼 보이지만 3번 계산함
+
+dimBlock.x = 4
+
+gpu_function<<<dimGrid, dimBlcok>>> (파라미터)
+
 
 
 
@@ -706,5 +775,9 @@ WALL Clock Time <- 운영체제 등등 영향을 받음
 
 
 ```
+
+
+
+
 
 
