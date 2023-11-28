@@ -755,6 +755,61 @@ dimBlock.x = 4
 
 gpu_function<<<dimGrid, dimBlcok>>> (파라미터)
 
+2 dimensional domain example
+
+dim block (3x3) threadIdx
+dim grid (2x3) block index (blockIdx)
+
+9*6 = 54개
+
+int i 행 2*(0,1) + (0, 1, 2) (3, 4, 5)
+int j 열 3*(0,1,2) + (0, 1,2) (3, 4, 5) (6,7,8)
+
+example of cuda kernel index <- 다음주에 한다
+dim block(3, 2)
+dim grid 9/3, 8/2 -> (3,4)
+
+A(i,j) = gridDim.x; 3이 출력된다.
+
+i, j는 0,0 부터 8,7까지
+
+blockIdx는 int i를 계산할 때의 값
+
+A(i,j) = i*3*2+j; i*6 + j
+
+i,j에 따라서 계산한 결과
+
+memory hierarchy <- hw10
+
+thread -> thread block -> grid
+thread  : local memory(register)
+thread blcok : shared memory <-hw10
+global memory :GPU 4GB CPU데이터를 GPU에 주고 GPU에서 계산한다. GPU 메모리
+
+A_d d는 device이름
+
+gpu 프로그램
+i all index
+
+gpu function은 앞에 __device__ 를 붙인다.
+
+C[N] = A[N] + B[N]
+gpu에 할당하고 루프가 없이 계산햇다.
+
+__device__ float add
+전부 float여야 한다.
+
+cpu->gpu
+
+cpu메모리에서 디바이스메모리(gpu메모리)로 cudaMemcpy로 보낸다.
+
+host <- cpu
+device <- gpu
+
+cpu에 있는 A를 gpu의 A_d에 복사한다.
+
+gpu to cpu 다시 cpu로 복사한다.
+
 
 
 
