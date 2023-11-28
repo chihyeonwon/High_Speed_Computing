@@ -810,25 +810,22 @@ cpu에 있는 A를 gpu의 A_d에 복사한다.
 
 gpu to cpu 다시 cpu로 복사한다.
 
+saxpy
 
+Single 단일 Double 다중
 
+AXPY <- A * X[i] + Y
+AX Plus Y
 
+A를 가지고 1.23을 곱한다음에
 
+vecadd하고 cuda memory allocate 하면 된다.
+결과가 안나오면 정상
 
+array A를
+b를 gpu cpu
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+hpa나 hpb에 가서 숙제를 하고 set적절하게 실행해서 과제를 한다.
 ```
 
 
