@@ -1,7 +1,15 @@
 # High_Speed_Computing
 컴퓨터공학과 초고속컴퓨팅 정리입니다.
 ![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/22ee6985-2f05-4219-8877-afa19b8e4c78)
+![image](https://github.com/mr-won/High_Speed_Computing/assets/58906858/13ff50ac-bb08-41fb-b71d-9b25791188f7)
+```
+병렬 프로그램을 배울 수 있었다. openMP, MPI 프로그래밍, GPU의 CUDA Programming
 
+대용량 시스템의 처리를 할 때 많은 프로세스를 작동시키는 데 cpu의 부담을 줄일 수 있을 것 같다.
+하지만 요새 나오는 cpu의 성능이 워낙 뛰어나기 때문에 속도차이는 그렇게 없는 것 같다.
+
+다음에 기회가 있으면 더 공부해보고 싶은 분야
+```
 ## Install XShell, MobaXterm
 [MobaXterm](https://securityspecialist.tistory.com/141)
 ![image](https://github.com/wonttan/High_Speed_Computing/assets/58906858/c735a0f0-9ccf-48d9-866b-43da42c50b0b)
